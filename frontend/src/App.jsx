@@ -1,9 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Singup from './pages/Singup';
+import Login from './pages/Login';
+
+
 function App() {
 
   return (
-    <>
-      <h1>Chat_App</h1>
-    </>
+    <BrowserRouter>
+         <Routes>
+            <Route path='/signup' element={<Singup />} />
+            <Route path='/' element={<Login />} />
+         </Routes>
+    </BrowserRouter>
   )
 }
 
