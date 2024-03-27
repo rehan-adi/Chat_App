@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 function Singup() {
-
-
 
   const [formData, setFormData] = useState({
     username: '',
@@ -19,11 +18,21 @@ const handleChange = (e) => {
     }));
 };
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send formData to backend
-    console.log('Form submitted with data:', formData);
-    // You can add your backend API call here
+    console.log('Form data:', formData);
+
+    try {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+        const res = await axios.post('/api/user', formData, config);
+        console.log('Response:', res.data);
+    } catch (error) {
+        console.error('Error:', error.response.data);
+    }
 };
 
 
@@ -49,8 +58,8 @@ const handleSubmit = (e) => {
                   onChange={handleChange}
               />
           </div>
-          <divvv className="mb-4">
-              <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
+          <div className="mb-4">
+              <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                   Email Address
               </label>
               <input
@@ -62,7 +71,7 @@ const handleSubmit = (e) => {
                   value={formData.email}
                   onChange={handleChange}
               />
-          </divvv>
+          </div>
           <div className="mb-6">
               <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
                   Password
