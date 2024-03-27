@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -25,15 +26,15 @@ function Login() {
 
 
   return (
-    <div className='lg:h-screen flex justify-center co items-center bg-[#0F0D0D]'>
-          <div className='w-[35vw] flex flex-col justify-center items-center bg-black rounded-lg h-[95vh]'>
-              <h1 className='text-white text-center font-bold mt-3 text-xl'>Log in</h1>
+    <div className='lg:h-screen flex justify-center  items-center bg-[#0F0D0D]'>
+          <div className='lg:w-[35vw] w-full flex flex-col justify-center items-center bg-black rounded-lg lg:h-[95vh] h-screen'>
+              <h1 className='text-white text-center font-bold lg:mb-0  mb-5 mt-3 text-2xl lg:text-xl'>Log in To Textefye</h1>
                <div className='flex mt-14 flex-col justify-center items-center gap-3'>
-                    <button className='w-[25vw] py-2 font-semibold bg-[#121212] border rounded-lg text-[#FFFFFFE6] text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg" className='inline-block mr-8' alt="" /></span>Continue With Google</button>
-                    <button className='w-[25vw] py-2 bg-[#121212] text-[#FFFFFFE6] font-semibold border rounded-lg text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg" className='inline-block mr-5' alt="" /></span>Continue With Facebook</button>
-                    <button className='w-[25vw] py-2 rounded-lg bg-[#121212] border text-[#FFFFFFE6] font-semibold text-sm'>Continue With Phone Number</button>
+                    <button className='lg:w-[25vw] w-[80vw] py-2 font-semibold bg-[#121212] border rounded-lg text-[#FFFFFFE6] text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg" className='inline-block mr-8' alt="" /></span>Continue With Google</button>
+                    <button className='lg:w-[25vw] w-[80vw] py-2 bg-[#121212] text-[#FFFFFFE6] font-semibold border rounded-lg text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg" className='inline-block mr-5' alt="" /></span>Continue With Facebook</button>
+                    <button className='lg:w-[25vw] w-[80vw] py-2 rounded-lg bg-[#121212] border text-[#FFFFFFE6] font-semibold text-sm'>Continue With Phone Number</button>
                </div>
-                <div className='w-[25vw] mt-10 border opacity-15'>
+                <div className='lg:w-[25vw] w-[80vw] mt-16 lg:mb-0 mb-4 lg:mt-10 border opacity-15'>
                      
                 </div>
                <div className="flex items-center w-full justify-center bg-black">
@@ -43,7 +44,7 @@ function Login() {
                         Username
                     </label>
                     <input
-                        className="shadow appearance-none outline-none rounded w-[25vw] py-3 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
+                        className="shadow appearance-none outline-none rounded w-[80vw] lg:w-[25vw] py-3 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
                         id="username"
                         type="text"
                         name="username"
@@ -58,7 +59,7 @@ function Login() {
                     </label>
                     <div className="relative">
                         <input
-                            className="shadow appearance-none bg-[#121212] outline-none rounded py-3 px-3 text-white mb-3 w-[25vw] border leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none bg-[#121212] outline-none rounded py-3 px-3 text-white mb-3 w-[80vw] lg:w-[25vw] border leading-tight focus:outline-none focus:shadow-outline"
                             id="password"
                             type={showPassword ? "text" : "password"}
                             name="password"
@@ -76,7 +77,7 @@ function Login() {
                 </div>
                 <div className="flex items-center justify-between">
                     <button
-                        className="bg-[#1ED760] text-black font-bold w-[25vw] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        className="bg-[#1ED760] text-black font-bold w-[80vw] lg:w-[25vw] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="submit"
                     >
                         Log In
@@ -84,11 +85,11 @@ function Login() {
                 </div>
             </form>
         </div>
-        <div className='w-[25vw] border opacity-15'>
+        <div className='lg:w-[25vw] w-[80vw] border opacity-15'>
                      
                 </div>
-                <div className='mt-7'>
-                     <h1 className='text-white font-semibold'>Don't have an account? <span className='text-[#1ED760] underline'>Sign Up</span></h1>
+                <div className='lg:mt-7 mt-12'>
+                     <h1 className='text-white font-semibold'>Don't have an account? <Link to="/signup"><span className='text-[#1ED760] underline'>Sign Up</span></Link></h1>
                 </div>
           </div>
     </div>

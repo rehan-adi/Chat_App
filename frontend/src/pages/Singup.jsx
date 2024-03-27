@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Singup() {
 
@@ -40,8 +41,8 @@ const handleSubmit = async (e) => {
   return (
     
     <div className='lg:h-screen flex justify-center co items-center bg-[#0F0D0D]'>
-    <div className='w-[35vw] flex flex-col justify-center items-center bg-black rounded-lg h-[95vh]'>
-        <h1 className='text-white text-center font-bold mt-3 text-xl'>Sing Up To Start Chating</h1>
+    <div className='lg:w-[35vw] w-full flex flex-col justify-center items-center bg-black rounded-lg h-screen lg:h-[95vh]'>
+        <h1 className='text-white text-center font-bold mb-10 lg:mb-0 mt-3 text-2xl lg:text-xl'>Sing Up To Start Chating</h1>
          <div className="flex items-center w-full justify-center bg-black">
       <form onSubmit={handleSubmit} className="bg-black flex flex-col justify-center items-center shadow-md rounded py-8 w-[35vw] mb-4">
           <div className="mb-4">
@@ -49,7 +50,7 @@ const handleSubmit = async (e) => {
                   Username
               </label>
               <input
-                  className="shadow appearance-none outline-none rounded w-[25vw] py-2 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
+                  className="shadow appearance-none outline-none rounded w-[80vw] lg:w-[25vw] py-2 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
                   id="username"
                   type="text"
                   name="username"
@@ -63,7 +64,7 @@ const handleSubmit = async (e) => {
                   Email Address
               </label>
               <input
-                  className="shadow appearance-none outline-none rounded w-[25vw] py-2 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
+                  className="shadow appearance-none outline-none rounded w-[80vw] lg:w-[25vw] py-2 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
                   id="email"
                   type="text"
                   name="email"
@@ -78,7 +79,7 @@ const handleSubmit = async (e) => {
               </label>
               <div className="relative">
                   <input
-                      className="shadow appearance-none bg-[#121212] outline-none rounded py-2 px-3 text-white mb-3 w-[25vw] border leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none bg-[#121212] outline-none rounded py-2 px-3 text-white mb-3 w-[80vw] lg:w-[25vw] border leading-tight focus:outline-none focus:shadow-outline"
                       id="password"
                       type={showPassword ? "text" : "password"}
                       name="password"
@@ -96,7 +97,7 @@ const handleSubmit = async (e) => {
           </div>
           <div className="flex items-center justify-between">
               <button
-                  className="bg-[#1ED760] text-black font-bold w-[25vw] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-[#1ED760] text-black font-bold w-[80vw] lg:w-[25vw] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
               >
                   Sing Up
@@ -104,18 +105,18 @@ const handleSubmit = async (e) => {
           </div>
       </form>
   </div>
-  <div className='w-[25vw] border opacity-15'>
+  <div className='lg:w-[25vw] w-[80vw] border opacity-15'>
                
           </div>
   <div className='flex mt-10 flex-col justify-center items-center gap-3'>
-              <button className='w-[25vw] py-2 font-semibold bg-[#121212] border rounded-lg text-[#FFFFFFE6] text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg" className='inline-block mr-8' alt="" /></span>Sign Up With Google</button>
-              <button className='w-[25vw] py-2 bg-[#121212] text-[#FFFFFFE6] font-semibold border rounded-lg text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg" className='inline-block mr-5' alt="" /></span>Sign Up With Facebook</button>
+              <button className=' w-[80vw] lg:w-[25vw] py-2 font-semibold bg-[#121212] border rounded-lg text-[#FFFFFFE6] text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg" className='inline-block mr-8' alt="" /></span>Sign Up With Google</button>
+              <button className=' w-[80vw] lg:w-[25vw] py-2 bg-[#121212] text-[#FFFFFFE6] font-semibold border rounded-lg text-sm'><span><img src="	https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg" className='inline-block mr-5' alt="" /></span>Sign Up With Facebook</button>
          </div>
-         <div className='w-[25vw] mt-10 border opacity-15'>
+         <div className='lg:w-[25vw] w-[80vw] mt-14 lg:mt-10 border opacity-15'>
                
           </div>
-          <div className='mt-7'>
-               <h1 className='text-white font-semibold'>Already have an account? <span className='text-[#1ED760] underline'>Log In Here</span></h1>
+          <div className='lg:mt-7 mt-10'>
+               <h1 className='text-white font-semibold'>Already have an account? <Link to="/"><span className='text-[#1ED760] underline'>Log In Here</span></Link> </h1>
           </div>
     </div>
 </div>
