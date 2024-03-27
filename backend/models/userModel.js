@@ -15,7 +15,6 @@ const userSchema = mongoose.Schema({
     },
     avatar: {
         type: String,
-        required: true,
         default: 'https://storage.googleapis.com/sticker-prod/RhxqmL4IFuxXNHn3VJco/0.png'
     }
 },
