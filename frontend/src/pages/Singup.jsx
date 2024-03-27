@@ -29,7 +29,7 @@ const handleSubmit = async (e) => {
                 'Content-Type': 'application/json'
             }
         };
-        const res = await axios.post('/api/user', formData, config);
+        const res = await axios.post('http://localhost:2000/api/user/', formData, config);
         console.log('Response:', res.data);
     } catch (error) {
         console.error('Error:', error.response.data);

@@ -3,12 +3,14 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import dbConnect from './config/db.js';
 import userRouts from './routes/userRoutes.js'
+import cors from 'cors'
 
 dotenv.config();
 dbConnect();
 
 const server = express();
 server.use(express.json());
+server.use(cors());
 
 const port = process.env.PORT || 2000;
 
