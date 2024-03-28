@@ -1,27 +1,27 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Login() {
 
     const [formData, setFormData] = useState({
-        username: '',
+        email: '',
         password: ''
     });
     const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { email, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
-            [name]: value
+            [email]: value
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        // Send formData to backend
         console.log('Form submitted with data:', formData);
-        // You can add your backend API call here
+        const res = await axios.post('')
     };
 
 
@@ -41,15 +41,15 @@ function Login() {
             <form onSubmit={handleSubmit} className="bg-black flex flex-col justify-center items-center shadow-md rounded py-8 w-[35vw] mb-4">
                 <div className="mb-4">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
-                        Username
+                        Email
                     </label>
                     <input
                         className="shadow appearance-none outline-none rounded w-[80vw] lg:w-[25vw] py-3 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
-                        id="username"
+                        id="email"
                         type="text"
-                        name="username"
-                        placeholder="Username"
-                        value={formData.username}
+                        name="email"
+                        placeholder="Email Address"
+                        value={formData.email}
                         onChange={handleChange}
                     />
                 </div>

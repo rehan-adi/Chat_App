@@ -4,11 +4,15 @@ import dotenv from 'dotenv';
 import dbConnect from './config/db.js';
 import userRouts from './routes/userRoutes.js'
 import cors from 'cors'
+import bodyParser from 'body-parser';
 
 dotenv.config();
 dbConnect();
 
 const server = express();
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
+
 server.use(express.json());
 server.use(cors());
 

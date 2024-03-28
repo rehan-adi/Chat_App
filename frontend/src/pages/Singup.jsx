@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+
 function Singup() {
 
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: ''
 });
@@ -31,6 +32,7 @@ const handleSubmit = async (e) => {
         };
         const res = await axios.post('http://localhost:2000/api/user/', formData, config);
         console.log('Response:', res.data);
+        window.location.href = "/";
     } catch (error) {
         console.error('Error:', error.response.data);
     }
@@ -51,11 +53,11 @@ const handleSubmit = async (e) => {
               </label>
               <input
                   className="shadow appearance-none outline-none rounded w-[80vw] lg:w-[25vw] py-2 px-3 text-white leading-tight border focus:outline-none bg-[#121212] focus:shadow-outline"
-                  id="username"
+                  id="name"
                   type="text"
-                  name="username"
+                  name="name"
                   placeholder="Username"
-                  value={formData.username}
+                  value={formData.name}
                   onChange={handleChange}
               />
           </div>
