@@ -12,12 +12,7 @@ const authUser = async (req, res) => {
         const user = await userModel.findOne({ email });
 
         if (!user) {
-            return res.status(400).json({ error: 'Invalid email or password' });
-        }
-
-        const isPasswordValid = await user.comparePassword(password);
-        if (!isPasswordValid) {
-            return res.status(400).json({ error: 'Invalid email or password' });
+            return res.status(400).json({ error: 'Invalid email' });
         }
 
         const token = generateToken(user._id);

@@ -11,17 +11,29 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
-        const { email, value } = e.target;
+        const { name, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
-            [email]: value
+            [name]: value
         }));
     };
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log('Form submitted with data:', formData);
-        const res = await axios.post('')
+        console.log('loginh data:', formData);
+
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            const res = await axios.post('http://localhost:2000/api/user/login', formData, config);
+            console.log('Response:', res.data);
+            window.location.href = "/home";   
+        } catch (error) {
+             console.log(error);
+        }
     };
 
 
@@ -40,7 +52,7 @@ function Login() {
                <div className="flex items-center w-full justify-center bg-black">
             <form onSubmit={handleSubmit} className="bg-black flex flex-col justify-center items-center shadow-md rounded py-8 w-[35vw] mb-4">
                 <div className="mb-4">
-                    <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                         Email
                     </label>
                     <input
