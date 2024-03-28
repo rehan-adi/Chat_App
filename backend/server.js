@@ -5,6 +5,7 @@ import dbConnect from './config/db.js';
 import userRouts from './routes/userRoutes.js'
 import cors from 'cors'
 import bodyParser from 'body-parser';
+import chatrouter from './routes/chatRoutes.js'
 
 dotenv.config();
 dbConnect();
@@ -19,6 +20,7 @@ server.use(cors());
 const port = process.env.PORT || 2000;
 
 server.use('/api/user', userRouts);
+server.use('/api/chat', chatrouter);
 
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`.yellow.bold);
